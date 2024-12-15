@@ -1,0 +1,1 @@
+{"a913ed01bcf45a7bac274b175637f8d7":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"cc08068bb725d9ad","reportUrl":"https://ZhikharevAl.github.io/ci_docker/6//#testresult/cc08068bb725d9ad","status":"passed","time":{"start":1734250478524,"stop":1734250478645,"duration":121}}]}}
