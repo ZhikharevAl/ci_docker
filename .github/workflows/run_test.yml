@@ -20,8 +20,18 @@ jobs:
       - name: Add local bin to PATH
         run: echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Run your tests
-        run: pytest --alluredir=allure-results || true
+        run: |
+          mkdir -p test-results
+          pytest --alluredir=allure-results --tracing=retain-on-failure || true
         continue-on-error: true
+
+      - name: Upload Playwright traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: test-results/
+          retention-days: 20
 
       - uses: actions/upload-artifact@v4
         with:
